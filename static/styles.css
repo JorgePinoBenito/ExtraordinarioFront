@@ -1,129 +1,135 @@
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+/* Base styles */
 * {
+  box-sizing: border-box;
   margin: 0;
+}
+html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji";
 }
 button {
   color: inherit;
-}
-button, [role="button"] {
   cursor: pointer;
 }
-code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
-  font-size: 1em;
-}
 img,
-svg {
-  display: block;
-}
-img,
+svg,
 video {
+  display: block;
   max-width: 100%;
   height: auto;
 }
 
-html {
-  line-height: 1.5;
-  -webkit-text-size-adjust: 100%;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+/* Layout */
+.container {
+  padding: 2rem 1rem;
 }
-.transition-colors {
-  transition-property: background-color, border-color, color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-.my-6 {
-  margin-bottom: 1.5rem;
-  margin-top: 1.5rem;
-}
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-.mx-2 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-.my-4 {
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-}
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-.py-8 {
-  padding-bottom: 2rem;
-  padding-top: 2rem;
-}
-.bg-\[\#86efac\] {
-  background-color: #86efac;
-}
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-.py-6 {
-  padding-bottom: 1.5rem;
-  padding-top: 1.5rem;
-}
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-.py-1 {
-  padding-bottom: 0.25rem;
-  padding-top: 0.25rem;
-}
-.border-gray-500 {
-  border-color: #6b7280;
-}
-.bg-white {
-  background-color: #fff;
-}
-.flex {
-  display: flex;
-}
-.gap-8 {
-  grid-gap: 2rem;
-  gap: 2rem;
-}
-.font-bold {
+.title {
+  font-size: 2rem;
   font-weight: 700;
+  margin-bottom: 1rem;
 }
-.max-w-screen-md {
-  max-width: 768px;
-}
-.flex-col {
-  flex-direction: column;
-}
-.items-center {
-  align-items: center;
-}
-.justify-center {
-  justify-content: center;
-}
-.border-2 {
-  border-width: 2px;
-}
-.rounded {
+
+/* Buttons */
+.button {
+  padding: 0.25rem 0.5rem;
+  border: 2px solid #6b7280;
   border-radius: 0.25rem;
+  background-color: #fff;
+  transition: background-color 150ms ease;
 }
-.hover\:bg-gray-200:hover {
+.button:hover:not(:disabled) {
   background-color: #e5e7eb;
 }
-.tabular-nums {
+
+/* Search form */
+.search-form {
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+.search-input {
+  flex: 1;
+  padding: 0.25rem 0.5rem;
+  border: 2px solid #6b7280;
+  border-radius: 0.25rem;
+}
+
+/* Character grid */
+.characters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.character-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  padding: 0.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  text-decoration: none;
+  color: inherit;
+}
+.character-card img {
+  border-radius: 0.5rem;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+/* Character detail */
+.character-detail {
+  display: flex;
+  gap: 1rem;
+}
+.character-info ul {
+  list-style: none;
+  padding: 0;
+}
+.character-info li {
+  margin-bottom: 0.5rem;
+}
+.back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+/* Counter island demo */
+.counter {
+  display: flex;
+  gap: 2rem;
+  padding: 1.5rem 0;
+}
+.counter-value {
+  font-size: 1.5rem;
   font-variant-numeric: tabular-nums;
+}
+
+/* 404 page */
+.not-found {
+  padding: 2rem 1rem;
+  background-color: #86efac;
+  text-align: center;
 }

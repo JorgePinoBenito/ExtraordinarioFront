@@ -1,10 +1,29 @@
-import { OptionalId } from "mongodb";
-
-export type Contact = {
-  id: string;
+export type CharacterListInfo = {
+  id: number;
   name: string;
-  phone: string;
-  email: string;
-}
+  image: string;
+};
 
-export type ContactDB = OptionalId<Omit<Contact,"id">>;
+export type Characters = {
+  info: {
+    count: number;
+    pages: number;
+    next: string;
+    prev: number;
+  };
+  results: CharacterListInfo[];
+};
+
+export type Character = {
+  name: string;
+  status: string;
+  species: string;
+  gender: string;
+  origin: {
+    name: string;
+  };
+  location: {
+    name: string;
+  };
+  image: string;
+};
